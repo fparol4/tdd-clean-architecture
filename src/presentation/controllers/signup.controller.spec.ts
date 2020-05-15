@@ -29,4 +29,32 @@ describe('SignupController', () => {
     expect(httpResponse.status_code).toBe(400)
     expect(httpResponse.body).toStrictEqual(new MissingParamError('email'))
   })
+
+  it('should return `status_code: 400` & `MissingParamError: password` when no name is provided', async () => {
+    const sut = new SignupController()
+    const httpRequest = {
+      body: {
+        name: 'any_name',
+        email: 'any_mail@mail.com',
+        password_confirmation: 'any_password'
+      }
+    }
+    const httpResponse = sut.handle(httpRequest)
+    expect(httpResponse.status_code).toBe(400)
+    expect(httpResponse.body).toStrictEqual(new MissingParamError('password'))
+  })
+
+  it('should return `status_code: 400` & `MissingParamError: password` when no name is provided', async () => {
+    const sut = new SignupController()
+    const httpRequest = {
+      body: {
+        name: 'any_name',
+        email: 'any_mail@mail.com',
+        password: 'any_password'
+      }
+    }
+    const httpResponse = sut.handle(httpRequest)
+    expect(httpResponse.status_code).toBe(400)
+    expect(httpResponse.body).toStrictEqual(new MissingParamError('password_confirmation'))
+  })
 })
