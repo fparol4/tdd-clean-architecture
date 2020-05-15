@@ -1,0 +1,7 @@
+{
+  "name": "tdd-clean-architecture",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Fabricio Parola <fabricio.parola@gmail.com>",
+  "license": "MIT"
+}
