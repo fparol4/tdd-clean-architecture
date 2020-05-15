@@ -22,7 +22,7 @@
     "typescript": "^3.9.2"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --colors --passWithNoTests --watch",
     "test:staged": "jest --colors --passWithNoTests"
   }
 }
